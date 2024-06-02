@@ -1,6 +1,7 @@
 ## Hi there 👋
 
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=naneunmuneo)](https://solved.ac/naneunmuneo/)
+[![Solved.ac Profile](https://mazandi.herokuapp.com/api?handle=naneunmuneo&theme=warm)](https://solved.ac/naneunmuneo)
 
 
 <!--

@@ -2,7 +2,7 @@
 
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjin20203458&count_bg=%233DC84A&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=naneunmuneo)](https://github.com/naneunmuneo/github-readme-stats)
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=jin20203458)](https://github.com/jin20203458/github-readme-stats)
 
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=naneunmuneo)](https://solved.ac/naneunmuneo/)
 [![Solved.ac Profile](https://mazandi.herokuapp.com/api?handle=naneunmuneo&theme=warm)](https://solved.ac/naneunmuneo)

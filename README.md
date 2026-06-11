@@ -8,7 +8,7 @@
 <img width="252" height="61" alt="image" src="https://github.com/user-attachments/assets/030873a4-f3eb-487e-899d-69b512ffb6d9" />
 
 
->  **LLVM/Clang 기반 소프트웨어 테스트 솔루션 의 메인 소프트웨어 엔지니어**로서, 저수준 컴파일러 인프라 가공부터 비동기 데스크톱 어플리케이션 아키텍처 및 AI 연동 파이프라인까지 풀스택으로 설계하고 개발합니다.
+>  **LLVM/Clang 기반  정적분석 소프트웨어 ARQA Static 메인 소프트웨어 엔지니어**로서, 저수준 컴파일러 인프라 가공부터 비동기 데스크톱 어플리케이션 아키텍처 및 AI 연동 파이프라인까지 풀스택으로 설계하고 개발합니다.
 
 <!--
 **jin20203458/jin20203458** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

@@ -26,23 +26,23 @@ Here are some ideas to get you started:
 -->
 ## Tech Stacks & Architecture
 
-### 💻 Core Languages & Frameworks
+###  Core Languages & Frameworks
 - **C++**: Low-Level System Programming / Custom Memory Pool 구현 및 메모리 최적화
 - **C# / .NET**: WPF 기반 비동기 멀티스레딩 아키텍처 / UI Thread Freezing 방어 및 최적화
 
-### 🤖 LLM & AI 응용 엔지니어링 (AI 파이프라인 제어)
+###  LLM & AI 응용 엔지니어링 (AI 파이프라인 제어)
 - **Context 오케스트레이션**: LLM 어텐션 희석 방지를 위한 **Context Pruning(맥락 정제)** 파이프라인 설계
 - **비용·레이턴시 최적화**: Gemini Flash 등 경량 모델 가성비 극대화 및 **Prefetch 기반 비동기 백그라운드 처리**
 - **Defensive Guardrail**: 생성형 모델의 출력 예외 및 포맷 파괴(**Silent Failure**) 방어 파서 구축
 - **자율형 에이전트 워크플로우**: **Human-In-The-Loop(유저 승인)** 기반의 [계획-검증-연동] 생태계 설계
 
-### ⚙️ System & Compiler Infrastructure
+###  System & Compiler Infrastructure
 - **컴파일러 인프라**: **LLVM/Clang AST Core** 가공 및 Custom 분석 패스(Pass) 설계
 - **프로그램 정적 분석**: Lexer, AST Matcher/Visitor, CFG, **Clang Static Analyzer(기호 실행/Symbolic Execution)** 기반 다중 레이어 보안 진단 툴 마감 경험
 - **네트워크 & 동시성**: Winsock/IOCP 아키텍처 이해 / 대규모 스트리밍 환경에서의 프로세스 격리(Process Isolation) 및 무상태(Stateless) 처리
 
 ---
 
-## 🚀 Featured Projects
+##  Featured Projects
 - **GRC (Git Repository Chat)**: 소스코드 레포지토리 맥락 기반 실시간 AI 페르소나 런타임 추론 엔진 및 자율 콘텐츠 저작 에이전트 시스템
 - **LLVM-Based Static Analysis Tool**: 대규모 상용 소스코드 취약점 진단 및 LLM 연동 자가 치유(Self-Healing) 정적 분석 플랫폼

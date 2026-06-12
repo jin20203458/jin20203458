@@ -40,7 +40,6 @@ Here are some ideas to get you started:
 - **자율형 에이전트 워크플로우**: **Human-In-The-Loop(유저 승인)** 기반의 [계획-검증-연동] 생태계 설계
 
 ###  System & Compiler Infrastructure
-- **컴파일러 인프라**: **LLVM/Clang AST Core** 가공 및 Custom 분석 패스(Pass) 설계
 - **프로그램 정적 분석**: Lexer, AST Matcher/Visitor, CFG, **Clang Static Analyzer(기호 실행/Symbolic Execution)** 기반 다중 레이어 보안 진단 툴 마감 경험
 - **네트워크 & 동시성**: Winsock/IOCP 아키텍처 이해 / 대규모 스트리밍 환경에서의 프로세스 격리(Process Isolation) 및 무상태(Stateless) 처리
 

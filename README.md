@@ -10,3 +10,4 @@
 
 >  **LLVM/Clang 기반  정적분석 소프트웨어 ARQA Static 메인 소프트웨어 엔지니어**로서, 저수준 컴파일러 인프라 가공부터 비동기 데스크톱 어플리케이션 아키텍처 및 AI 연동 파이프라인까지 풀스택으로 설계하고 개발합니다.
 
+* **GRC (GenAI Roleplay Chat)**: `System.Threading.Channels` 기반 동시성 제어와 3단계 계층 기억 파이프라인을 탑재하여 UI 동결(0ms 지연) 없는 고성능 생성형 AI WPF 데스크톱 어플리케이션.

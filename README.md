@@ -2,8 +2,8 @@
   <h2>Hi there 👋 I'm Jin (naneunmuneo)</h2>
   <p><b>Software Engineer | Compiler Infrastructure | AI Pipelines & Architecture</b></p>
 
-  [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=jin20203458&show_icons=true&theme=radium)](https://github.com/jin20203458/github-readme-stats)
-  [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=jin20203458&layout=compact&theme=radium)](https://github-readme-stats.vercel.app/api/top-langs/?username=jin20203458)
+  [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=jin20203458&show_icons=true)](https://github.com/jin20203458/github-readme-stats)
+  [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=jin20203458&layout=compact)](https://github.com/jin20203458/github-readme-stats)
   
   [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=naneunmuneo)](https://solved.ac/naneunmuneo/)
 </div>
@@ -26,7 +26,6 @@
   <!-- Languages -->
   <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
   <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <!-- Infrastructure / Platforms -->
   <img src="https://img.shields.io/badge/LLVM/Clang-111111?style=for-the-badge&logo=llvm&logoColor=white" />
   <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" />

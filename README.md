@@ -45,9 +45,13 @@
   - 상태 기계(State-Machine) 기반 대화 쿨다운 및 감정 쇠퇴 로직
   - LLM 하이브리드 파이프라인을 통한 추론 비용 최적화 및 소문 변형(Gossip/Rumor) 메커니즘 구현
 
-#### 🕵️‍♂️ GRC (Global Regulatory Compliance)
-- **Environment:** WPF, C#
-- **Features:** 계층형 메모리 및 재귀적 로어북(Recursive Lorebook) 구조 활용. 상태 기계를 기반으로 한 자율 감사 시스템 구축.
+#### 🎭 GRC (Gemini Roleplay Chat)
+- **Environment:** WPF, C# (.NET 8.0)
+- **Features:** 
+  - Google Gemini API를 활용한 고몰입도 캐릭터 AI 롤플레잉 및 소설 창작용 데스크톱 클라이언트
+  - 3단계 압축 기억 메커니즘(Raw History / Chapter Plot / Chronicle)으로 대규모 서사 장기 유지
+  - 에이전트 기반 자율 TRPG 세션 빌더 'AI 세션 아키텍트' 및 자율 감사관(Auditor) 루프 구현
+  - Gemini 멀티모달 오디오를 활용한 감정선 반영 TTS 연출 및 평행세계 분기 시스템
 
 #### 🧠 MCP Context Feeder
 - **Features:** 로컬 JSON-RPC/SSE를 활용한 AI 생산성 툴. 옵시디언(Obsidian)과 연동하여 컨텍스트 효율을 극대화.

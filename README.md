@@ -55,6 +55,8 @@
 - **Features:** 
   - **MCP Context Feeder:** 로컬 JSON-RPC/SSE를 활용한 AI 생산성 툴. 옵시디언(Obsidian)과 연동하여 에이전트의 컨텍스트 효율을 극대화.
   - **AiAgent.Diagnostics (Agent Helper):** AI 에이전트가 런타임 오류를 자율 분석하고 스스로 소스 코드를 수정할 수 있도록 설계된 C#/.NET 고성능 비침투적 관찰(Observability) 모듈.
+ 
+  
 
 ---
 

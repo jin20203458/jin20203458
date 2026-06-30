@@ -37,7 +37,6 @@
 ---
 
 ### 🚀 Key Projects
-
 #### 🌍 Project Mundus Vivens (AI NPC 자율 생태계 엔진)
 > *"LLM의 자유도"와 "게임 시스템의 통제 가능성"의 결합*
 - **Architecture:** C++ (Game Server), C# (AI API Server), Unity 기반 3-Tier 아키텍처 설계
@@ -45,7 +44,6 @@
   - 플레이어의 개입 없이도 자체적으로 유지되는 NPC 생태계 시뮬레이션
   - 상태 기계(State-Machine) 기반 대화 쿨다운 및 감정 쇠퇴 로직
   - LLM 하이브리드 파이프라인을 통한 추론 비용 최적화 및 소문 변형(Gossip/Rumor) 메커니즘 구현
-
 #### 🎭 GRC (Gemini Roleplay Chat)
 - **Environment:** WPF, C# (.NET 8.0)
 - **Features:** 
@@ -53,9 +51,10 @@
   - 3단계 압축 기억 메커니즘(Raw History / Chapter Plot / Chronicle)으로 대규모 서사 장기 유지
   - 에이전트 기반 자율 TRPG 세션 빌더 'AI 세션 아키텍트' 및 자율 감사관(Auditor) 루프 구현
   - Gemini 멀티모달 오디오를 활용한 감정선 반영 TTS 연출 및 평행세계 분기 시스템
-
-#### 🧠 MCP Context Feeder
-- **Features:** 로컬 JSON-RPC/SSE를 활용한 AI 생산성 툴. 옵시디언(Obsidian)과 연동하여 컨텍스트 효율을 극대화.
+#### 🧠 MCP Context Feeder & AI Agent Diagnostics Helper
+- **Features:** 
+  - **MCP Context Feeder:** 로컬 JSON-RPC/SSE를 활용한 AI 생산성 툴. 옵시디언(Obsidian)과 연동하여 에이전트의 컨텍스트 효율을 극대화.
+  - **AiAgent.Diagnostics (Agent Helper):** AI 에이전트가 런타임 오류를 자율 분석하고 스스로 소스 코드를 수정할 수 있도록 설계된 C#/.NET 고성능 비침투적 관찰(Observability) 모듈.
 
 ---
 

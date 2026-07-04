@@ -1,60 +1,62 @@
 # Jin (naneunmuneo)
-**Software Engineer | Compiler Infrastructure | AI Pipelines & Architecture**
+**Software Engineer | Compiler Infrastructure | Systems & AI Architecture**
 
-[![GitHub stats](https://github-readme-stats.vercel.app/api?username=jin20203458&show_icons=true)](https://github.com/jin20203458/github-readme-stats)
-
----
-
-## About Me
-
-LLVM/Clang 기반 정적분석 소프트웨어 **"ARQA Static"**의 메인 소프트웨어 엔지니어입니다. 
-저수준 컴파일러 인프라 가공부터 비동기 데스크톱 어플리케이션 아키텍처 설계, 그리고 최신 AI 연동 파이프라인까지 아우르는 풀스택 시스템 설계 및 개발에 주력하고 있습니다.
-
-- **Focus**: System Architecture, Compiler Infrastructure (LLVM/Clang), AI Ecosystem Engine, Asynchronous Programming
-- **Philosophy**: "자유도 높은 시스템 속에서 통제 가능한 질서를 설계합니다."
+[![GitHub stats](https://github-readme-stats.vercel.app/api?username=jin20203458&show_icons=true)](https://github.com/jin20203458)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=jin20203458&layout=compact)](https://github.com/jin20203458)
 
 ---
 
-## Tech Stack
+## 👨‍💻 About Me
 
-- **Languages**: C++, C#
-- **Infrastructure & Frameworks**: LLVM/Clang, .NET, Unity, gRPC
+LLVM/Clang 기반 정적분석 솔루션 **"ARQA Static"**의 메인 시스템 엔지니어입니다. 
+저수준 컴파일러 인프라 가공부터 비동기 데스크톱 어플리케이션 아키텍처 설계, 그리고 고성능 AI 파이프라인 엔진까지 아우르는 풀스택 시스템 설계 및 구현에 집중하고 있습니다.
+
+*   **Core Focus**: Low-level Systems, Compiler Infrastructure (LLVM/Clang), Asynchronous Programming, High-performance AI Integration
+*   **Engineering Philosophy**: *"자유도 높은 시스템 속에서 정밀하게 통제 가능한 질서를 설계합니다."*
 
 ---
 
-## Key Projects
+## 🛠️ Technical Matrix
+
+### Languages
+<img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" /> <img src="https://img.shields.io/badge/C%23-239120?style=flat-square&logo=c-sharp&logoColor=white" />
+
+### System & Infrastructure Core
+<img src="https://img.shields.io/badge/LLVM/Clang%20Toolchain-111111?style=flat-square&logo=llvm&logoColor=white" /> <img src="https://img.shields.io/badge/gRPC-244c5a?style=flat-square&logo=grpc&logoColor=white" /> <img src="https://img.shields.io/badge/Protocol%20Buffers-3A6B4F?style=flat-square&logo=c&logoColor=white" /> <img src="https://img.shields.io/badge/TCP/IP%20Sockets-000000?style=flat-square&logo=internetexplorer&logoColor=white" />
+
+### Frameworks & Desktop Application
+<img src="https://img.shields.io/badge/.NET%208.0-512BD4?style=flat-square&logo=dotnet&logoColor=white" /> <img src="https://img.shields.io/badge/WPF-3A96DD?style=flat-square&logo=windows&logoColor=white" />
+
+### Build & Package Managers
+<img src="https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white" /> <img src="https://img.shields.io/badge/vcpkg-181717?style=flat-square&logo=c&logoColor=white" />
+
+---
+
+## 🚀 Pinned Projects
 
 ### Project Mundus Vivens (AI NPC 자율 생태계 엔진)
-*LLM의 자유도와 게임 시스템의 통제 가능성을 결합한 시뮬레이션 시스템*
+*LLM의 높은 추론 자유도와 전통적 게임 서버 시스템의 통제 가능성을 융합한 시뮬레이션 프로젝트*
 
-- **Architecture**: 
-  - **C++ Game Server**: 물리 연산 및 공간 논리를 담당하는 3-스레드 리액터 모델
-  - **C# AI API Server**: 인지 모델 및 LLM 통신을 전담하는 백엔드 서버
-  - **Unity Client**: TCP 통신을 통해 월드를 렌더링하는 클라이언트
-  - *서버 간 통신은 고성능 gRPC 파이프라인으로 통합 운영됩니다.*
-- **Features**:
-  - **통합 믿음(Belief) 엔진**: NPC들이 상호작용을 통해 단기/중기/장기(Core) 기억을 형성하고, 시간에 따른 자연스러운 쇠퇴(Decay) 및 와전(Mutation)을 수학적으로 시뮬레이션합니다.
-  - **자율 동적 관계망**: 플레이어 개입 없이도 공간 조우 기반으로 대화 확률을 계산하며, 스스로 호감도 및 신뢰도를 갱신하고 일일 스케줄 성찰(Reflection)을 수행합니다.
+*   **Architecture**: C++ 게임 서버와 C# AI 인지 백엔드 서버 간의 **고성능 gRPC 양방향 비동기 스트리밍 파이프라인** 구축.
+*   **C++ Game Server**: 데이터 레이스를 방지하고 락프리 연산을 지향하는 **3-스레드 리액터 모델** 및 공간 해시 그리드(Spatial Hash Grid) 기반의 틱 동기화 시뮬레이션 엔진 바닥부터 구현.
+*   **C# AI Engine**: 단기/중기/장기(Core) 메모리를 관리하는 **통합 믿음(Belief) 엔진** 설계. 에이전트 간의 정보 전파와 시간 경과에 따른 쇠퇴(Decay) 및 와전(Mutation)을 시뮬레이션화.
 
 ### GRC (Gemini Roleplay Chat)
-*고몰입도 캐릭터 AI 롤플레잉 및 소설 창작용 데스크톱 클라이언트*
+*Google Gemini API 기반의 고몰입도 롤플레잉 및 서사 창작용 WPF 데스크톱 어플리케이션*
 
-- **Environment**: WPF, C# (.NET 8.0)
-- **Features**:
-  - **3단계 압축 기억 메커니즘**: 대규모 서사를 장기간 유지하기 위한 계층형 메모리 구조 (Raw History / Chapter Plot / Chronicle).
-  - **AI 세션 아키텍트**: 에이전트 기반 자율 TRPG 세션 빌더 및 자율 감사관(Auditor) 루프 구현.
-  - **감정선 반영 TTS**: Gemini 멀티모달 오디오를 활용하여 평행세계 분기 시스템 및 감정 상태에 따른 음성 연출.
+*   **Memory Architecture**: 컨텍스트 윈도우 한계를 극복하기 위해 대화 기록을 계층화한 **3단계 메모리 압축 파이프라인**(Raw History -> Chapter Plot -> Chronicle) 설계.
+*   **TRPG Orchestration**: 에이전트 기반 자율 TRPG 세션 빌더와 프롬프트 오류 방지를 위한 실시간 자율 감사관(Auditor) 루프 내장.
+*   **Multimodal Integration**: Gemini 멀티모달 오디오 스트리밍 및 사용자 감정 가중치를 이용한 동적 분기형 TTS 연출 처리.
 
 ### MCP Context Feeder & AiAgent.Diagnostics
-*AI 에이전트 생산성 및 자율 디버깅을 위한 보조 파이프라인*
+*AI 에이전트의 개발 효율성과 런타임 안정성 강화를 위한 독립 파이프라인 도구*
 
-- **MCP Context Feeder**: 로컬 JSON-RPC/SSE 기반으로 옵시디언(Obsidian)과 연동하여 AI 에이전트의 컨텍스트 참조 효율을 극대화합니다.
-- **AiAgent.Diagnostics**: AI 에이전트가 런타임 오류를 자율 분석하고 스스로 소스 코드를 수정할 수 있도록 설계된 고성능 비침투적 관찰(Observability) 모듈.
+*   **MCP Context Feeder**: 로컬 JSON-RPC 및 SSE 기반 통신 프로토콜을 사용하며, 개인 기술 위키(Obsidian)와 AI 에이전트 간의 고효율 컨텍스트 피딩 브릿지 구현.
+*   **AiAgent.Diagnostics**: 비침투적 관찰(Observability) 설계를 적용하여, 프로덕션 실행 중 발생하는 오류 스택을 AI 에이전트가 자율 감지하고 코드 수정까지 도달하게 돕는 C# 디버깅 라이브러리.
 
 ---
 
-## Contact
+## 📬 Connect with me
 
 - **Email**: adg01008@naver.com
-- **GitHub**: [jin20203458](https://github.com/jin20203458)
-- **Solved.ac**: [naneunmuneo](https://solved.ac/naneunmuneo/)
+- **Solved.ac Boj Profile**: [@naneunmuneo](https://solved.ac/naneunmuneo)

@@ -1,13 +1,6 @@
 # Jin (naneunmuneo)
 **Software Engineer | Compiler Infrastructure | Systems & AI Architecture**
 
-<p align="left">
-  <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=Cuppa&logoColor=white" />
-  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=Spring_Boot&logoColor=white" />
-  <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=Go&logoColor=white" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white" />
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.dot.js&logoColor=white" />
-</p>
 
 ---
 

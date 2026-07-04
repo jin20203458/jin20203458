@@ -11,8 +11,8 @@
 LLVM/Clang 기반 정적분석 솔루션 **"ARQA Static"**의 메인 시스템 엔지니어입니다. 
 저수준 컴파일러 인프라 가공부터 비동기 데스크톱 어플리케이션 아키텍처 설계, 그리고 고성능 AI 파이프라인 엔진까지 아우르는 풀스택 시스템 설계 및 구현에 집중하고 있습니다.
 
-*   **Core Focus**: Low-level Systems, Compiler Infrastructure (LLVM/Clang), Asynchronous Programming, High-performance AI Integration
-*   **Engineering Philosophy**: *"자유도 높은 시스템 속에서 정밀하게 통제 가능한 질서를 설계합니다."*
+- **Core Focus**: Low-level Systems, Compiler Infrastructure (LLVM/Clang), Asynchronous Programming, High-performance AI Integration
+- **Engineering Philosophy**: *"자유도 높은 시스템 속에서 정밀하게 통제 가능한 질서를 설계합니다."*
 
 ---
 
@@ -37,22 +37,46 @@ LLVM/Clang 기반 정적분석 솔루션 **"ARQA Static"**의 메인 시스템 �
 ### Project Mundus Vivens (AI NPC 자율 생태계 엔진)
 *LLM의 높은 추론 자유도와 전통적 게임 서버 시스템의 통제 가능성을 융합한 시뮬레이션 프로젝트*
 
-*   **Architecture**: C++ 게임 서버와 C# AI 인지 백엔드 서버 간의 **고성능 gRPC 양방향 비동기 스트리밍 파이프라인** 구축.
-*   **C++ Game Server**: 데이터 레이스를 방지하고 락프리 연산을 지향하는 **3-스레드 리액터 모델** 및 공간 해시 그리드(Spatial Hash Grid) 기반의 틱 동기화 시뮬레이션 엔진 바닥부터 구현.
-*   **C# AI Engine**: 단기/중기/장기(Core) 메모리를 관리하는 **통합 믿음(Belief) 엔진** 설계. 에이전트 간의 정보 전파와 시간 경과에 따른 쇠퇴(Decay) 및 와전(Mutation)을 시뮬레이션화.
+```mermaid
+graph LR
+    subgraph Client Layer
+        Unity[Unity Client]
+    end
+
+    subgraph Physical World Engine
+        CPP[C++ Game Server<br/>20Hz Lock-Free Loop<br/>Spatial Hash Grid]
+    end
+
+    subgraph Cognitive AI Engine
+        CS[C# AI API Server<br/>Belief Decay & Mutation<br/>Dialogue Orchestration]
+        LLM[(Google Gemini API)]
+    end
+
+    Unity <-->|TCP / Protobuf| CPP
+    CPP <-->|gRPC Bidirectional Streaming| CS
+    CS <-->|HTTPS REST| LLM
+```
+
+- **Architecture**: C++ 게임 서버와 C# AI 인지 백엔드 서버 간의 **고성능 gRPC 양방향 비동기 스트리밍 파이프라인** 구축.
+- **C++ Game Server**: 데이터 레이스를 방지하고 락프리 연산을 지향하는 **3-스레드 리액터 모델** 및 공간 해시 그리드(Spatial Hash Grid) 기반의 틱 동기화 시뮬레이션 엔진 바닥부터 구현.
+- **C# AI Engine**: 단기/중기/장기(Core) 메모리를 관리하는 **통합 믿음(Belief) 엔진** 설계. 에이전트 간의 정보 전파와 시간 경과에 따른 쇠퇴(Decay) 및 와전(Mutation)을 시뮬레이션화.
+
+---
 
 ### GRC (Gemini Roleplay Chat)
 *Google Gemini API 기반의 고몰입도 롤플레잉 및 서사 창작용 WPF 데스크톱 어플리케이션*
 
-*   **Memory Architecture**: 컨텍스트 윈도우 한계를 극복하기 위해 대화 기록을 계층화한 **3단계 메모리 압축 파이프라인**(Raw History -> Chapter Plot -> Chronicle) 설계.
-*   **TRPG Orchestration**: 에이전트 기반 자율 TRPG 세션 빌더와 프롬프트 오류 방지를 위한 실시간 자율 감사관(Auditor) 루프 내장.
-*   **Multimodal Integration**: Gemini 멀티모달 오디오 스트리밍 및 사용자 감정 가중치를 이용한 동적 분기형 TTS 연출 처리.
+- **Memory Architecture**: 컨텍스트 윈도우 한계를 극복하기 위해 대화 기록을 계층화한 **3단계 메모리 압축 파이프라인**(Raw History -> Chapter Plot -> Chronicle) 설계.
+- **TRPG Orchestration**: 에이전트 기반 자율 TRPG 세션 빌더와 프롬프트 오류 방지를 위한 실시간 자율 감사관(Auditor) 루프 내장.
+- **Multimodal Integration**: Gemini 멀티모달 오디오 스트리밍 및 사용자 감정 가중치를 이용한 동적 분기형 TTS 연출 처리.
+
+---
 
 ### MCP Context Feeder & AiAgent.Diagnostics
 *AI 에이전트의 개발 효율성과 런타임 안정성 강화를 위한 독립 파이프라인 도구*
 
-*   **MCP Context Feeder**: 로컬 JSON-RPC 및 SSE 기반 통신 프로토콜을 사용하며, 개인 기술 위키(Obsidian)와 AI 에이전트 간의 고효율 컨텍스트 피딩 브릿지 구현.
-*   **AiAgent.Diagnostics**: 비침투적 관찰(Observability) 설계를 적용하여, 프로덕션 실행 중 발생하는 오류 스택을 AI 에이전트가 자율 감지하고 코드 수정까지 도달하게 돕는 C# 디버깅 라이브러리.
+- **MCP Context Feeder**: 로컬 JSON-RPC 및 SSE 기반 통신 프로토콜을 사용하며, 개인 기술 위키(Obsidian)와 AI 에이전트 간의 고효율 컨텍스트 피딩 브릿지 구현.
+- **AiAgent.Diagnostics**: 비침투적 관찰(Observability) 설계를 적용하여, 프로덕션 실행 중 발생하는 오류 스택을 AI 에이전트가 자율 감지하고 코드 수정까지 도달하게 돕는 C# 디버깅 라이브러리.
 
 ---
 

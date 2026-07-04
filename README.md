@@ -1,7 +1,8 @@
 # Jin (naneunmuneo)
 **Software Engineer | Compiler Infrastructure | Systems & AI Architecture**
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jin20203458&layout=compact&theme=tokyonight&hide_border=true" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jin20203458&layout=donut&theme=dark&hide_border=true" />
+
 ---
 
 ## 👨‍💻 About Me

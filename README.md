@@ -4,7 +4,7 @@
 
 ---
 
-## 👨‍💻 About Me
+##  About Me
 
 https://kocome.com/solution
 
@@ -16,7 +16,7 @@ LLVM/Clang 기반 정적분석 솔루션 **ARQA Static**의 메인 시스템 엔
 
 ---
 
-## 🛠️ Technical Matrix
+##  Technical Matrix
 
 ### Languages
 <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" /> <img src="https://img.shields.io/badge/C%23-239120?style=flat-square&logo=c-sharp&logoColor=white" />
@@ -32,7 +32,7 @@ LLVM/Clang 기반 정적분석 솔루션 **ARQA Static**의 메인 시스템 엔
 
 ---
 
-## 🚀 Pinned Projects
+##  Pinned Projects
 
 ### Project Mundus Vivens (AI NPC 자율 생태계 엔진)
 *LLM의 높은 추론 자유도와 전통적 게임 서버 시스템의 통제 가능성을 융합한 시뮬레이션 프로젝트*

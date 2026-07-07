@@ -75,7 +75,7 @@ graph LR
 ### MCP Context Feeder & AiAgent.Diagnostics
 *AI 에이전트의 개발 효율성과 런타임 안정성 강화를 위한 독립 파이프라인 도구*
 
-- **MCP Context Feeder**: 로컬 JSON-RPC 및 SSE 기반 통신 프로토콜을 사용하며, 개인 기술 위키(Obsidian)와 AI 에이전트 간의 고효율 컨텍스트 피딩 브릿지 구현.
+- **MCP Context Feeder**: 로컬 JSON-RPC 및 SSE 기반 통신 프로토콜을 사용하며, 권한 유무와 관계없이 에이전트의 안전한 읽기 지원. 
 - **AiAgent.Diagnostics**: 비침투적 관찰(Observability) 설계를 적용하여, 프로덕션 실행 중 발생하는 오류 스택을 AI 에이전트가 자율 감지하고 코드 수정까지 도달하게 돕는 C# 디버깅 라이브러리.
 
 ---

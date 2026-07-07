@@ -80,7 +80,7 @@ graph LR
 
 ---
 
-## 📬 Connect with me
+##  Connect with me
 
 - **Email**: adg01008@naver.com
 - **Solved.ac Boj Profile**: [@naneunmuneo](https://solved.ac/naneunmuneo)

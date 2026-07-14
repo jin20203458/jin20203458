@@ -1,6 +1,5 @@
 # Jin (naneunmuneo)
 Software engineer developing static analysis tools. 
-
 Currently researching high-performance system runtimes and AI orchestration infrastructures.
 
 ---

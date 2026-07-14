@@ -1,13 +1,7 @@
 # Jin (naneunmuneo)
-
-
-##  About Me
-
-https://kocome.com/solution
-
-LLVM/Clang 기반 정적분석 솔루션 **ARQA Static**의 메인 시스템 엔지니어입니다. 
+## About Me
+LLVM/Clang 기반 정적분석 솔루션 **[ARQA Static](https://kocome.com/solution)**의 메인 시스템 엔지니어입니다.  
 저수준 컴파일러 인프라 가공부터 비동기 데스크톱 어플리케이션 아키텍처 설계, 그리고 고성능 AI 파이프라인 엔진까지 아우르는 풀스택 시스템 설계 및 구현에 집중하고 있습니다.
-
 - **Core Focus**: Low-level Systems, Compiler Infrastructure (LLVM/Clang), Asynchronous Programming, High-performance AI Integration
 - **Engineering Philosophy**: *"자유도 높은 시스템 속에서 정밀하게 통제 가능한 질서를 설계합니다."*
 

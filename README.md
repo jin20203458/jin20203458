@@ -1,6 +1,6 @@
 # Jin (naneunmuneo)
-**Software Engineer | Compiler Infrastructure | Systems & AI Architecture**
-
+Software engineer developing static analysis tools. 
+Currently researching high-performance system runtimes and AI orchestration infrastructures.
 
 ---
 

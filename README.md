@@ -10,7 +10,6 @@ LLVM/Clang 기반 정적분석 솔루션 [ARQA Static](https://kocome.com/soluti
 ##  Technical Matrix
 
 ### Languages
-### Languages
 <img src="https://img.shields.io/badge/Modern%20C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" /> <img src="https://img.shields.io/badge/C%23-239120?style=flat-square&logo=c-sharp&logoColor=white" /> 
 
 ### Server Architecture & Profiling

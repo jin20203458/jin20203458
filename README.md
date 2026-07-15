@@ -19,7 +19,7 @@ LLVM/Clang 기반 정적분석 솔루션 [ARQA Static](https://kocome.com/soluti
 ### System & Infrastructure Core
 <img src="https://img.shields.io/badge/LLVM/Clang%20Toolchain-111111?style=flat-square&logo=llvm&logoColor=white" /> <img src="https://img.shields.io/badge/gRPC-244c5a?style=flat-square&logo=grpc&logoColor=white" /> <img src="https://img.shields.io/badge/Protocol%20Buffers-3A6B4F?style=flat-square&logo=c&logoColor=white" /> <img src="https://img.shields.io/badge/TCP/IP%20Sockets-000000?style=flat-square&logo=internetexplorer&logoColor=white" /> <img src="https://img.shields.io/badge/Boost.Asio-00599C?style=flat-square&logo=boost&logoColor=white" />
 
-### Storage & AI Pipeline
+### Data & AI Pipeline
 <img src="https://img.shields.io/badge/LiteDB%20(NoSQL)-4CAF50?style=flat-square&logo=mongodb&logoColor=white" /> <img src="https://img.shields.io/badge/Google%20Gemini%20API-8E75B2?style=flat-square&logo=googlegemini&logoColor=white" /> <img src="https://img.shields.io/badge/nlohmann/json-000000?style=flat-square&logo=json&logoColor=white" />
 
 ### Frameworks & Client

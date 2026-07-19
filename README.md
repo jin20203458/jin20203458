@@ -64,7 +64,7 @@ graph LR
 - **Behavior & Survival**: 물리적 생존 본능(허기/피로)이 발생하면 AI 대뇌의 일정을 즉시 인터럽트하는 생존 오버라이드(Survival Override) 및 과거 트라우마 기억을 바탕으로 공격성을 동적으로 제어하는 위협 억제 파이프라인(Threat Inhibition) 구축.
 ---
 
-### GRC (GenAI Roleplay Chat)
+### GRC (Generative AI Roleplay Chat)
 *Google Gemini API 기반의 고몰입도 롤플레잉 및 서사 창작용 WPF 데스크톱 어플리케이션*
 
 - **Memory Architecture**: 컨텍스트 윈도우 한계를 극복하기 위해 대화 기록을 계층화한 **3단계 메모리 압축 파이프라인**(Raw History -> Chapter Plot -> Chronicle) 설계.

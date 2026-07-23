@@ -35,7 +35,7 @@
 
 ##  Pinned Projects
 
-### Project Mundus Vivens (AI NPC 자율 생태계 엔진)
+### Project Mundus Vivens (AI AGENTS 자율 생태계 엔진)
 *LLM의 높은 추론 자유도와 전통적 게임 서버 시스템의 통제 가능성을 융합한 시뮬레이션 프로젝트*
 
 ```mermaid

@@ -27,7 +27,7 @@
 <img src="https://img.shields.io/badge/LLVM/Clang%20Toolchain-111111?style=flat-square&logo=llvm&logoColor=white" /> <img src="https://img.shields.io/badge/gRPC-244c5a?style=flat-square&logo=grpc&logoColor=white" /> <img src="https://img.shields.io/badge/Protocol%20Buffers-3A6B4F?style=flat-square&logo=c&logoColor=white" /> <img src="https://img.shields.io/badge/TCP/IP%20Sockets-000000?style=flat-square&logo=internetexplorer&logoColor=white" /> <img src="https://img.shields.io/badge/Boost.Asio-00599C?style=flat-square&logo=boost&logoColor=white" />
 
 ### Data & AI Pipeline
-<img src="https://img.shields.io/badge/LiteDB%20(NoSQL)-4CAF50?style=flat-square&logo=mongodb&logoColor=white" /> <img src="https://img.shields.io/badge/Google%20Gemini%20API-8E75B2?style=flat-square&logo=googlegemini&logoColor=white" /> <img src="https://img.shields.io/badge/nlohmann/json-000000?style=flat-square&logo=json&logoColor=white" />
+<img src="https://img.shields.io/badge/LiteDB%20(NoSQL)-4CAF50?style=flat-square&logo=mongodb&logoColor=white" /> <img src="https://img.shields.io/badge/LLM%20Orchestration-8E75B2?style=flat-square&logo=openai&logoColor=white" /> <img src="https://img.shields.io/badge/nlohmann/json-000000?style=flat-square&logo=json&logoColor=white" />
 
 ### Frameworks & Client
 <img src="https://img.shields.io/badge/.NET%209.0-512BD4?style=flat-square&logo=dotnet&logoColor=white" /> <img src="https://img.shields.io/badge/WPF-3A96DD?style=flat-square&logo=windows&logoColor=white" /> <img src="https://img.shields.io/badge/Unity%203D-000000?style=flat-square&logo=unity&logoColor=white" />
@@ -40,44 +40,29 @@
 ## Pinned Projects
 
 ### Project Phalanx (AI-Augmented Windows Kernel EDR Solution)
-*Windows 커널 텔레메트리 후킹과 자율 LLM ReAct 위협 헌터를 결합한 차세대 2-Tier 엔드포인트 탐지 및 대응 솔루션*
+*Windows 커널 텔레메트리 후킹과 자율 LLM ReAct 위협 헌터를 결합한 2-Tier 엔드포인트 탐지 및 대응 솔루션*
 
 ```mermaid
 graph LR
-    subgraph Kernel & Sensor Layer
-        ETW[Windows Kernel ETW] -->|Hooking| Collector[EtwKernelCollector]
-        Collector -->|Zero-Drop| Queue[DoubleBuffered<br/>SwapQueue]
-        Actuator[ProcessActuator<br/>24μs NtSuspendProcess<br/>0.1ms TerminateProcess] -.->|Enforce| Target[Target Process]
-        WD[SafetyWatchdog<br/>30s SLA / Auto-Resume] --> Actuator
+    subgraph Endpoint Layer
+        ETW[Windows Kernel ETW] --> Sensor[C++ Native Sensor<br/>24μs Process Freeze<br/>Lock-Swap Queue]
     end
 
-    subgraph IPC Pipeline
-        Client[C++ GrpcStreamClient<br/>asio-grpc C++20]
-        Queue --> Client
-        Client <-->|gRPC Bidirectional Stream<br/>HTTP/2 Port 50051| Server[C# Kestrel Server<br/>PhalanxGrpcService]
-        Server -.->|MitigationCommand| Client
-        Client -.-> Actuator
+    subgraph Streaming IPC
+        Sensor <-->|gRPC Bidirectional Stream| Server[C# Threat Server<br/>Kestrel / CQRS Tree]
     end
 
-    subgraph Cognitive AI & Forensics
-        Server --> Tree[ProcessTree<br/>Projection CQRS]
-        Server --> Agent[AutonomousHunterAgent<br/>Gemini 3.8 Flash ReAct]
-        Agent <--> LLM[(Google Gemini API<br/>JSON Mode)]
-        Agent --> Tools[5 Forensic Tools<br/>VAD Scan / Decoder / Firewall]
-        Agent --> Archive[(LiteDB Forensics<br/>Audit Storage)]
-    end
-
-    subgraph SecOps Cockpit
-        Server --> Bridge[CockpitUiBridge<br/>Dispatcher Marshaling]
-        Bridge --> WPF[WPF MainWindow<br/>Progressive Disclosure<br/>Forensic Inspector]
-        Ctrl[SensorProcessController<br/>UAC runas & Local Event] -.->|Lifecycle| Client
+    subgraph Cognitive AI & Cockpit
+        Server <--> Agent[Autonomous Hunter Agent<br/>ReAct Loop / 5 Forensic Tools]
+        Agent <--> LLM[(Reasoning LLM API)]
+        Server --> UI[WPF Threat Cockpit<br/>Progressive Disclosure]
     end
 ```
 
-- **초저지연 커널 액추에이션 (Deterministic Reflex)**: Windows 커널 ETW 실시간 수집 및 `NtSuspendProcess`를 활용한 **24μs급 원자적 프로세스 동결** 구현. 랜섬웨어 시스템 파괴 명령 감지 시 0.1ms 이내 즉각 현장 사살 집행 (락 경합을 원천 차단한 더블 버퍼드 락-스왑 큐 및 30초 SLA SafetyWatchdog 자동 재개/연장 페일세이프 내장).
-- **자율 ReAct AI 위협 헌터 (Gemini 3.8 Flash)**: 최대 5턴 제한 가드 기반의 자율 추론 루프로 5대 OS 수사 도구(VirtualQueryEx 기반 VAD Unbacked 실행 메모리 핀포인트 스캔, Gzip/Base64/Hex 다단계 난독화 해독, RFC 1918 사설망 마스킹 위협 평판, MITRE ATT&CK 26종 정규식 체계 분류, Windows 방화벽 C2 IP 격리)를 자율 오케스트레이션.
-- **단일 진실 공급원(SSOT) 신뢰성 아키텍처**: 정적 문자열 휴리스틱이 AI의 결론을 왜곡하는 의사결정 탈취(Decision Hijacking)를 배제하고, ReAct 루프 완결 시 LLM 수사관의 최종 판결(`ACTION_KILL` vs `ACTION_RESUME`)을 100% 최상위 권한으로 수용하여 정상 관리 스크립트 오탐을 완벽 차단.
-- **엔터프라이즈 WPF 관제 콕핏**: 이모티콘 0개의 절제된 Obsidian Dark 토큰 테마, 점진적 공개(Progressive Disclosure) 기반 마스터-디테일 포렌식 인스펙터, `runas` UAC 자동 기동 및 세션 로컬 Win32 명명 이벤트(`Local\PhalanxSensorShutdownEvent`)를 통한 고아 프로세스 없는 순차 동기 수명주기 제어.
+- **Architecture**: C++ 네이티브 센서와 C# 관제 서버 간의 **gRPC 양방향 비동기 스트리밍 파이프라인** 및 CQRS 기반 실시간 프로세스 트리 프로젝션 구축.
+- **C++ Kernel Sensor**: Windows 커널 ETW 실시간 후킹과 `NtSuspendProcess`를 활용한 **24μs급 원자적 프로세스 동결** 및 30초 SLA SafetyWatchdog 자동 재개/연장 페일세이프 엔진 구현.
+- **Cognitive AI Hunter**: VAD 미할당 실행 메모리 스캔 및 다단계 페이로드 디코더 등 5대 포렌식 도구를 자율 구동하는 **ReAct 수사 루프** 및 정상 관리 행위 오탐을 원천 차단하는 **SSOT 의사결정 권한** 체계 설계.
+- **SecOps Cockpit**: 침해 지표를 직관적으로 분석하는 **점진적 공개(Progressive Disclosure) WPF 관제 콘솔** 및 안전한 권한 분리를 위한 세션 로컬 수명주기 동기화 제어.
 
 ---
 
@@ -96,7 +81,7 @@ graph LR
 
     subgraph Cognitive AI Engine
         CS[C# AI API Server<br/>Belief Decay & Mutation<br/>Dialogue Orchestration]
-        LLM[(Google Gemini API)]
+        LLM[(Reasoning LLM API)]
     end
 
     Unity <-->|TCP / Protobuf| CPP
@@ -112,15 +97,14 @@ graph LR
 ---
 
 ### GRC (Generative AI Roleplay Chat)
-*Google Gemini API 기반의 고몰입도 롤플레잉 및 서사 창작용 WPF 데스크톱 어플리케이션*
+*LLM 기반의 고몰입도 롤플레잉 및 서사 창작용 WPF 데스크톱 어플리케이션*
 
 - **Memory Architecture**: 컨텍스트 윈도우 한계를 극복하기 위해 대화 기록을 계층화한 **3단계 메모리 압축 파이프라인**(Raw History -> Chapter Plot -> Chronicle) 설계.
 - **TRPG Orchestration**: 에이전트 기반 자율 TRPG 세션 빌더와 프롬프트 오류 방지를 위한 실시간 자율 감사관(Auditor) 루프 내장.
-- **Multimodal Integration**: Gemini 멀티모달 오디오 스트리밍 및 사용자 감정 가중치를 이용한 동적 분기형 TTS 연출 처리.
+- **Multimodal Integration**: LLM 멀티모달 오디오 스트리밍 및 사용자 감정 가중치를 이용한 동적 분기형 TTS 연출 처리.
 
 ---
 
 ## Connect with me
 
 - **Email**: adg01008@naver.com
-

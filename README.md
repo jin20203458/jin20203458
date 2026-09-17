@@ -1,11 +1,10 @@
-
 # Jin (naneunmuneo)
 ## About Me
 정적분석 솔루션 [ARQA Static](https://kocome.com/solution)의 메인 시스템 엔지니어입니다.  
 컴파일러 인프라 처리부터 비동기 데스크톱 아키텍처, 대규모 AI 파이프라인까지 복잡한 요구사항을 고성능 아키텍처로 구현하는 엔드투엔드(End-to-End) 시스템 엔지니어링에 집중하고 있습니다.
 - **Core Focus**: 
   - **High-Performance & Kernel Systems**: Windows 커널 ETW 기반 텔레메트리 수집 및 저지연 프로세스 제어
-  - **Compiler Tooling**: LLVM/Clang 기반 정적 분석(Static Analysis) 엔진 및 도구 체인 구축
+  - **Compiler Tooling**: LLVM/Clang 기반 정적 분석(Static Analysis) 엔진 및 툴체인 구축
   - **Concurrent Architecture**: 논블로킹(Non-blocking) 동시성 제어 기반의 확장 가능한 서버/앱 아키텍처
   - **AI Orchestration**: 도구 호출(Tool Calling) 및 ReAct 루프 기반의 AI 에이전트 파이프라인 구축
 - **Engineering Philosophy**: *"자유도 높은 시스템 속에서 정밀하게 통제 가능한 질서를 설계합니다."*
@@ -40,7 +39,7 @@
 ## Pinned Projects
 
 ### Project Phalanx (AI-Augmented Windows EDR)
-*Windows 커널 텔레메트리와 LLM 위협 분석 에이전트를 결합한 2-Tier 엔드포인트 탐지 및 대응 솔루션*
+*Windows 커널 텔레메트리와 LLM 위협 분석 에이전트를 결합한 엔드포인트 탐지 및 대응(EDR) 시스템*
 
 ```mermaid
 graph LR
@@ -59,10 +58,10 @@ graph LR
     end
 ```
 
-- **Architecture**: C++ 네이티브 센서와 C# 관제 서버 간의 **gRPC 양방향 비동기 스트리밍 파이프라인** 및 CQRS 기반 실시간 프로세스 트리 프로젝션 구축.
-- **C++ Kernel Sensor**: Windows 커널 ETW 실시간 수집 및 `NtSuspendProcess`를 활용한 프로세스 일시 중지(Freeze) 제어. 타임아웃 기반 자동 재개(SafetyWatchdog) 페일세이프 메커니즘 구현.
-- **AI Threat Hunter**: VAD 미할당 실행 메모리 스캔, 페이로드 디코딩 등 포렌식 도구를 연계한 **ReAct 에이전트 루프** 구현. 정적 룰 오탐을 방어하고 최종 판정 결과를 실행 제어로 전달하는 의사결정 구조 설계.
-- **SecOps Cockpit**: **점진적 공개(Progressive Disclosure) UI 패턴**을 적용한 WPF 기반 위협 관제 대시보드. UAC 권한 분리 및 세션 로컬 명명 이벤트를 통한 프로세스 수명주기 동기화.
+- **Architecture**: C++ 네이티브 센서와 C# 관제 서버 간의 **gRPC 양방향 비동기 스트리밍 파이프라인** 및 CQRS 기반 실시간 프로세스 트리 상태 관리 구축.
+- **C++ Kernel Sensor**: Windows 커널 ETW 실시간 수집 및 `NtSuspendProcess`를 활용한 프로세스 일시 중지(Freeze) 제어. 워치독(SafetyWatchdog) 타임아웃 설계를 통한 수사 지연 시 프로세스 자동 재개 및 데드락 방지.
+- **AI Threat Hunter**: VAD 순회를 통한 비정상 실행 메모리(Unbacked Memory) 탐지 및 페이로드 디코딩 등 수사 도구 연동. 정적 룰 오탐을 보정하고 LLM 판정에 따라 프로세스 종료/재개를 집행하는 의사결정 구조 설계.
+- **SecOps Cockpit**: **점진적 공개(Progressive Disclosure) UI 패턴**을 적용한 WPF 기반 위협 관제 대시보드. UAC 권한 분리 및 Win32 이벤트(Named Event) 기반의 안전한 센서 기동/종료 제어.
 
 ---
 
@@ -92,7 +91,7 @@ graph LR
 - **Architecture**: C++ 게임 서버와 C# AI 인지 백엔드 서버 간의 **고성능 gRPC 양방향 비동기 스트리밍 파이프라인** 구축.
 - **C++ Game Server**: 임계 구역(Critical Section) 대기 시간을 최소화하는 **더블 버퍼드 락-스왑(Lock-Swap) 기반 3-스레드 Proactor 모델** 및 공간 해시 그리드(Spatial Hash Grid) 기반 시뮬레이션 엔진 구현.
 - **C# AI Engine**: 단기/중기/장기 메모리를 관리하는 **통합 믿음(Belief) 엔진** 설계. 에이전트 간 정보 전파와 시간 경과에 따른 쇠퇴(Decay) 및 변형(Mutation) 시뮬레이션.
-- **Behavior & Survival**: 물리적 상태(허기/피로)에 따라 행동 계획을 즉시 중단하는 생존 오버라이드(Survival Override) 및 상태 기반 반응 제어 파이프라인 구축.
+- **Behavior & Survival**: 물리적 상태(허기/피로)에 따라 행동 계획을 즉시 중단하는 생존 인터럽트(Survival Override) 및 감정/상태 기반 반응 제어 로직 구현.
 
 ---
 
@@ -100,7 +99,7 @@ graph LR
 *LLM 기반의 인터랙티브 스토리텔링 및 롤플레잉 WPF 데스크톱 어플리케이션*
 
 - **Memory Architecture**: 컨텍스트 윈도우 한계를 극복하기 위한 **3단계 계층형 메모리 압축 파이프라인**(Raw History -> Chapter Plot -> Chronicle) 설계.
-- **TRPG Orchestration**: 에이전트 기반 세션 빌더 및 TRPG 룰/프롬프트 무결성을 검증하는 Auditor 루프 내장.
+- **TRPG Orchestration**: 에이전트 기반 세션 빌더 및 TRPG 룰/프롬프트 무결성을 실시간 검증하는 감사(Auditor) 루프 구현.
 - **Multimodal Integration**: 실시간 오디오 스트리밍 연동 및 감정 가중치 기반 음성 합성(TTS) 파이프라인 구현.
 
 ---

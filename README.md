@@ -36,9 +36,9 @@
 
 ---
 
-## Pinned Projects-EDR
+## Pinned Projects
 
-### Project Phalanx (AI-Augmented Windows EDR)
+### Project Phalanx-EDR (AI-Augmented Windows EDR)
 *Windows 커널 텔레메트리와 LLM 위협 분석 에이전트를 결합한 엔드포인트 탐지 및 대응(EDR) 시스템*
 
 ```mermaid

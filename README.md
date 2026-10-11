@@ -4,7 +4,7 @@
 C++와 C#으로 Windows 소프트웨어를 개발합니다.
 현재 정적 분석 도구 [ARQA Static](https://kocome.com/solution)을 개발하고 있습니다.
 
-업무 밖에서는 Windows 시스템 내부 구조와 동시성 설계에 관심을 두고, 커널 이벤트 기반 EDR과 멀티스레드 게임 서버를 직접 만들고 있습니다.
+업무 밖에서는 Windows 시스템 내부 구조와 동시성 설계에 관심을 두고, 커널 이벤트 기반 EDR과 멀티스레드 에이전트 시뮬레이션 서버를 직접 만들고 있습니다.
 
 - **관심 분야**
   - Windows 시스템: ETW 커널 이벤트 수집, Win32/NT API 기반 프로세스·메모리 제어
@@ -69,16 +69,16 @@ graph LR
 ---
 
 ### [Mundus Vivens](https://github.com/jin20203458/MundusVivens) - LLM 에이전트 생태계 시뮬레이션
-*C++ 게임 서버가 물리 세계를, C# 서버가 LLM 기반 에이전트의 판단을 맡는 시뮬레이션 프로젝트*
+*C++ 코어 서버가 물리적 환경을, C# 서버가 LLM 기반 에이전트의 판단을 처리하는 시뮬레이션 프로젝트*
 
 ```mermaid
 graph LR
-    Unity[Unity Client] <-->|TCP / Protobuf| CPP[C++ Game Server<br/>20Hz Loop<br/>Spatial Hash Grid]
+    Unity[Unity Client] <-->|TCP / Protobuf| CPP[C++ Core Server<br/>20Hz Loop<br/>Spatial Hash Grid]
     CPP <-->|gRPC Bidirectional Stream| CS[C# AI Server<br/>Belief / Dialogue]
     CS <-->|HTTPS| LLM[(LLM API)]
 ```
 
-- **C++ 게임 서버**: 3-스레드 Proactor 구조에 더블 버퍼 락-스왑을 적용해 스레드 간 임계 구역 대기 시간을 줄인 20Hz 서버 루프. 공간 해시 그리드로 근접 탐색 처리.
+- **C++ 코어 서버**: 3-스레드 Proactor 구조에 더블 버퍼 락-스왑을 적용해 스레드 간 임계 구역 대기 시간을 줄인 20Hz 서버 루프. 공간 해시 그리드로 근접 탐색 처리.
 - **C# AI 서버**: 에이전트별 단기·중기·장기 기억을 관리하고, 정보가 전파되며 시간에 따라 흐려지거나 왜곡되는 과정을 시뮬레이션.
 - **행동 제어**: 허기·피로 같은 상태가 임계치를 넘으면 진행 중인 행동 계획을 즉시 중단하고 생존 행동으로 전환.
 - 관련 저장소: [GameServer.Cpp](https://github.com/jin20203458/MundusVivens.GameServer.Cpp) / [Unity](https://github.com/jin20203458/MundusVivens.Unity)

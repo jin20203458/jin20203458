@@ -45,7 +45,7 @@ C++와 C#으로 Windows 소프트웨어를 개발합니다.
 *ETW로 수집한 커널 이벤트를 바탕으로 의심 프로세스를 멈추고, LLM 에이전트가 조사해 종료 여부를 판단하는 개인 EDR 프로젝트*
 
 ```mermaid
-flowchart TD
+flowchart LR
     subgraph Endpoint["Endpoint"]
         ETW["Windows Kernel ETW"] --> Sensor["C++ Sensor<br/>Process Suspend<br/>Lock-Swap Queue"]
     end
@@ -56,10 +56,8 @@ flowchart TD
 
     subgraph Analysis_UI["Analysis and UI"]
         Agent["Hunter Agent<br/>ReAct / Tools"]
-        LLM[("LLM API")]
+        Agent <--> LLM[("LLM API")]
         UI["WPF Cockpit"]
-
-        Agent <--> LLM
     end
 
     Sensor <-->|"gRPC Bidirectional Stream"| ControlServer

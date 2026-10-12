@@ -66,7 +66,7 @@ flowchart LR
 ```mermaid
 flowchart LR
     Unity["Unity Client"] <-->|"TCP / Protobuf"| CPP["C++ Core Server<br/>20Hz Loop<br/>Spatial Hash Grid"]
-    CPP <-->|"gRPC Bidirectional Stream"| CS["CSharp AI Server<br/>Belief / Dialogue"]
+    CPP <-->|"Async gRPC (asio-grpc)"| CS["CSharp AI Server<br/>Belief / Dialogue"]
     CS <-->|"HTTPS"| LLM[("LLM API")]
 ```
 

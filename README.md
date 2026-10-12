@@ -46,23 +46,11 @@ C++와 C#으로 Windows 소프트웨어를 개발합니다.
 
 ```mermaid
 flowchart LR
-    subgraph Endpoint["Endpoint"]
-        ETW["Windows Kernel ETW"] --> Sensor["C++ Sensor<br/>Process Suspend<br/>Lock-Swap Queue"]
-    end
-
-    subgraph Server_Tier["Server"]
-        ControlServer["CSharp Control Server<br/>Process Tree"]
-    end
-
-    subgraph Analysis_UI["Analysis and UI"]
-        Agent["Hunter Agent<br/>ReAct / Tools"]
-        Agent <--> LLM[("LLM API")]
-        UI["WPF Cockpit"]
-    end
-
-    Sensor <-->|"gRPC Bidirectional Stream"| ControlServer
-    ControlServer <--> Agent
-    ControlServer --> UI
+    ETW["Windows Kernel ETW"] -->|"Kernel Events"| Sensor["C++ Sensor<br/>Process Suspend<br/>Lock-Swap Queue"]
+    Sensor <-->|"gRPC Bidirectional Stream"| Server["CSharp Control Server<br/>Process Tree"]
+    Server <-->|"Investigation"| Agent["Hunter Agent<br/>ReAct / Tools"]
+    Agent <-->|"HTTPS"| LLM[("LLM API")]
+    Server -->|"Telemetry UI"| UI["WPF Cockpit"]
 ```
 
 - **C++ 센서**: ETW(Kernel-Process 프로바이더)로 프로세스 이벤트를 실시간 수집. 이벤트 콜백 스레드가 막히지 않도록 락-스왑 큐로 수집과 처리를 분리.

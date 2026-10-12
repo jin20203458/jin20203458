@@ -45,20 +45,26 @@ C++와 C#으로 Windows 소프트웨어를 개발합니다.
 *ETW로 수집한 커널 이벤트를 바탕으로 의심 프로세스를 멈추고, LLM 에이전트가 조사해 종료 여부를 판단하는 개인 EDR 프로젝트*
 
 ```mermaid
-graph LR
-    subgraph Endpoint
-        ETW[Windows Kernel ETW] --> Sensor[C++ Sensor<br/>Process Suspend<br/>Lock-Swap Queue]
+flowchart TD
+    subgraph Endpoint["Endpoint"]
+        ETW["Windows Kernel ETW"] --> Sensor["C++ Sensor<br/>Process Suspend<br/>Lock-Swap Queue"]
     end
 
-    subgraph Server
-        Sensor <-->|gRPC Bidirectional Stream| Server[C# Control Server<br/>Process Tree]
+    subgraph Server_Tier["Server"]
+        ControlServer["CSharp Control Server<br/>Process Tree"]
     end
 
-    subgraph Analysis & UI
-        Server <--> Agent[Hunter Agent<br/>ReAct / Tools]
-        Agent <--> LLM[(LLM API)]
-        Server --> UI[WPF Cockpit]
+    subgraph Analysis_UI["Analysis and UI"]
+        Agent["Hunter Agent<br/>ReAct / Tools"]
+        LLM[("LLM API")]
+        UI["WPF Cockpit"]
+
+        Agent <--> LLM
     end
+
+    Sensor <-->|"gRPC Bidirectional Stream"| ControlServer
+    ControlServer <--> Agent
+    ControlServer --> UI
 ```
 
 - **C++ 센서**: ETW(Kernel-Process 프로바이더)로 프로세스 이벤트를 실시간 수집. 이벤트 콜백 스레드가 막히지 않도록 락-스왑 큐로 수집과 처리를 분리.
@@ -72,10 +78,10 @@ graph LR
 *C++ 코어 서버가 물리적 환경을, C# 서버가 LLM 기반 에이전트의 판단을 처리하는 시뮬레이션 프로젝트*
 
 ```mermaid
-graph LR
-    Unity[Unity Client] <-->|TCP / Protobuf| CPP[C++ Core Server<br/>20Hz Loop<br/>Spatial Hash Grid]
-    CPP <-->|gRPC Bidirectional Stream| CS[C# AI Server<br/>Belief / Dialogue]
-    CS <-->|HTTPS| LLM[(LLM API)]
+flowchart LR
+    Unity["Unity Client"] <-->|"TCP / Protobuf"| CPP["C++ Core Server<br/>20Hz Loop<br/>Spatial Hash Grid"]
+    CPP <-->|"gRPC Bidirectional Stream"| CS["CSharp AI Server<br/>Belief / Dialogue"]
+    CS <-->|"HTTPS"| LLM[("LLM API")]
 ```
 
 - **C++ 코어 서버**: 3-스레드 Proactor 구조에 더블 버퍼 락-스왑을 적용해 스레드 간 임계 구역 대기 시간을 줄인 20Hz 서버 루프. 공간 해시 그리드로 근접 탐색 처리.
